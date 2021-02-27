@@ -1,7 +1,8 @@
-package com.edu.basic;
+package com.edu.challenges.basic;
 
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.function.UnaryOperator;
 
 public class AverageCarConsumption {
 
@@ -14,7 +15,7 @@ public class AverageCarConsumption {
 		double fuel = keyboard.nextDouble();
 		
 		keyboard.close();
-		
+				
 		System.out.printf("%.3f km/l", distance / fuel);
 		
 	}

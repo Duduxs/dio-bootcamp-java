@@ -1,4 +1,4 @@
-package com.edu.basic;
+package com.edu.challenges.basic;
 
 import java.util.Scanner;
 

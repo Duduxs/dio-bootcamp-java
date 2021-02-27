@@ -1,4 +1,4 @@
-package com.edu.basic;
+package com.edu.challenges.basic;
 
 import java.util.Locale;
 import java.util.Optional;
