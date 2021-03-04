@@ -1,6 +1,6 @@
 package duke.choice;
 
-public class Clothing {
+public class Clothing implements Comparable<Clothing> {
 
 	private String description = "I'm a non static variable";
 	private Double price;
@@ -42,6 +42,17 @@ public class Clothing {
 
 	public void setSize(String size) {
 		this.size = size;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s, %.2f, %s", description, price, size);
+	}
+
+	
+	@Override
+	public int compareTo(Clothing c) {
+		return this.price.compareTo(c.getPrice());
 	}
 
 }

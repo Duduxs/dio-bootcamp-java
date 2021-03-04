@@ -1,5 +1,7 @@
 package duke.choice.ShopApp;
 
+import java.util.Arrays;
+
 import duke.choice.Clothing;
 import duke.choice.Customer;
 
@@ -23,13 +25,13 @@ public class ShopApp extends Clothing {
 		
 		System.out.printf("Customer: %s, his/her size: %s", c1.getName(), c1.getSize());
 		System.out.println("\n");
-		int i = 0;
-		for (Clothing item : c1.getItems()) {
 		
-			i += 1;
-			System.out.printf("Item: %d, description: %s, price: %.2f, size: %s%n", i, item.getDescription(), item.getPrice(),
-					item.getSize());
-
+		Arrays.stream(c1.getItems()).forEach(System.out::println);
+		Arrays.sort(c1.getItems());
+		System.out.println();
+		
+		for (Clothing item : c1.getItems()) {
+			System.out.println(item);
 		}
 		
 		System.out.println(String.format("\n%d", c1.getTotalAvaregeClothingCost()));
