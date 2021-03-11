@@ -1,3 +1,5 @@
+import java.time.Duration;
+import java.time.LocalTime;
 
 public class Hi {
 	String ObjectSystemValue = "";
@@ -22,7 +24,10 @@ public class Hi {
 		
 		System.out.println(ax.substring(0,5));
 		
+		long seconds = Duration.ofHours(2).getSeconds();
+		System.out.println(seconds);
 		ax.intern();
+		
 	}
 	
 	public static void algo(int i) {
