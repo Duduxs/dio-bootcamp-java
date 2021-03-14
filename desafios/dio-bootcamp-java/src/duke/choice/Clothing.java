@@ -1,19 +1,31 @@
 package duke.choice;
 
+import java.lang.Math;
+import static java.lang.Math.round;
+
 public class Clothing implements Comparable<Clothing> {
 
+	static {
+		Math.round(5);
+		Long e = round(3.0);
+		int x = 0;
+		x+=50;
+		MIN_PRICE = (double) x;	
+	}
+	
+	
 	private String description = "I'm a non static variable";
 	private Double price;
 	private String size;
 
 	public static final Double TAX = 1.2;
-	public static final Double MIN_PRICE = 10.0;
+	public static final Double MIN_PRICE;
 	
 
 	public Clothing() {
 
 	}
-
+	
 	public Clothing(String description, Double price, String size) {
 		this.description = description;
 		this.price = price;
