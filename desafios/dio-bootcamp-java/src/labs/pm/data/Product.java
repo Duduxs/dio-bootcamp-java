@@ -1,6 +1,9 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+
+import duke.choice.ShopApp.SO;
+
 import static java.math.RoundingMode.HALF_UP;
 
 /**
@@ -13,7 +16,7 @@ import static java.math.RoundingMode.HALF_UP;
  * {@link DISCOUNT_RATE discount rate}
  * @author Eduardo José
  * @version 1.0
- * @see "My Github"
+ * @see "My Github /Duduxs"
  *
  */
 public class Product {
@@ -21,6 +24,7 @@ public class Product {
 	private int id;
 	private String name;
 	private BigDecimal price;
+
 	
 	public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
 	
@@ -32,8 +36,9 @@ public class Product {
 		this.id = id;
 		this.name = name;
 		this.price = price;
+		
 	}
-	
+
 	public BigDecimal getDiscount() {
 		return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
 	}

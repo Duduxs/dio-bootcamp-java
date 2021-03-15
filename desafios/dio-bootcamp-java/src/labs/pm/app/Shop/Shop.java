@@ -14,7 +14,7 @@ import labs.pm.data.Product;
  */
 public class Shop {
 
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		  Product p1 = new Product(1, "Tea", BigDecimal.valueOf(1.99));
 		  System.out.println(p1);
 	}
