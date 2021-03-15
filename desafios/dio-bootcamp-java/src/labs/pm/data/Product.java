@@ -1,19 +1,18 @@
 package labs.pm.data;
 
-import java.math.BigDecimal;
-
-import duke.choice.ShopApp.SO;
-
 import static java.math.RoundingMode.HALF_UP;
+import static labs.pm.data.Rating.*;
+
+import java.math.BigDecimal;
 
 /**
  * 
- * {@code Product} é a classe que representa um produto qualquer dentro do sistema.
- * <br>
- * Cada instância da mesma conterá os atributos id, name & price.
- * <br>
+ * {@code Product} é a classe que representa um produto qualquer dentro do
+ * sistema. <br>
+ * Cada instância da mesma conterá os atributos id, name & price. <br>
  * Cada produto pode ter um desconto com o calculo baseado no
  * {@link DISCOUNT_RATE discount rate}
+ * 
  * @author Eduardo José
  * @version 1.0
  * @see "My Github /Duduxs"
@@ -21,56 +20,53 @@ import static java.math.RoundingMode.HALF_UP;
  */
 public class Product {
 
-	private int id;
-	private String name;
-	private BigDecimal price;
+	private final int id;
 
-	
+	private final String name;
+	private final BigDecimal price;
+	private final Rating rating;
+
 	public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
-	
+
 	public Product() {
-		
+		this(0, "", BigDecimal.ZERO);
 	}
 
-	public Product(int id, String name, BigDecimal price) {
+	public Product(int id , String name, BigDecimal price) {
+		this(id, name, price, NOT_RATED);
+	}
+
+	public Product(int id, String name, BigDecimal price, Rating rating) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
-		
+		this.rating = rating;
 	}
-
+	
 	public BigDecimal getDiscount() {
 		return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
+	}
+	
+	public Product applyRating(Rating rating) {
+		return new Product(id, name, price, rating);
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public Rating getRating() {
+		return rating;
 	}
-
-	public BigDecimal getPrice() {
-		return price;
-	}
-
-	public void setPrice(final BigDecimal price) {
-		this.price = price;
-	}
-	
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", discount=" + getDiscount() + "]";
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", discount=" + getDiscount() + ", rating="
+				+ rating.getStars() + "]";
 	}
 
 	@Override
@@ -106,6 +102,5 @@ public class Product {
 			return false;
 		return true;
 	}
-	
-	
+
 }
