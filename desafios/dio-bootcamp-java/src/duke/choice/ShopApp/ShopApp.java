@@ -7,11 +7,26 @@ import duke.choice.Customer;
 
 //Oracle activity 2
 public class ShopApp extends Clothing {
+	
+	public static void changeIt(Customer object, int x, String o) {
+		object = new Customer("Blue", 4);
+		x = 500;
+		o = "Ui";
+		o.substring(1);
+	}
 
 	public static void main(String[] args) {
-	
+
 		System.out.println("Welcome to Duke Choice Shop!");
 		Customer c1 = new Customer("Pinky", 3);
+		String o = "Oi, blz?!";
+		String a = new String("Oi, blz?!");
+		int x = 1;
+		
+		changeIt(c1, x, o);
+		System.out.println(c1.getName());
+		System.out.println(x);
+		System.out.println(o == a);
 		
 		Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");
 		Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "L");

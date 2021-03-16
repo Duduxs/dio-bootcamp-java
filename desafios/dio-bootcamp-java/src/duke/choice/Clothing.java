@@ -1,6 +1,5 @@
 package duke.choice;
 
-import java.lang.Math;
 import static java.lang.Math.round;
 
 public class Clothing implements Comparable<Clothing> {

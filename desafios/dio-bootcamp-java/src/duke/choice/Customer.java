@@ -16,6 +16,8 @@ public class Customer {
 		this.name = name;
 		this.setSize(measurement);
 	}
+	
+
 
 	public void addItems(Clothing[] item) {
 		this.items = item;
@@ -48,6 +50,10 @@ public class Customer {
 
 	public String getName() {
 		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getSize() {
