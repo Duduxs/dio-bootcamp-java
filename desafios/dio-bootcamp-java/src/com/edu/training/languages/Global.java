@@ -1,4 +1,4 @@
-package com.edu.global;
+package com.edu.training.languages;
 
 import java.text.MessageFormat;
 import java.text.NumberFormat;
@@ -10,8 +10,6 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Global {
-
-
 	
 	public static void main(String[] args) {
 		Locale localeEn = new Locale("en", "GB");
