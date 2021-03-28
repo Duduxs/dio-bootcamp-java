@@ -3,7 +3,7 @@ package labs.pm.data;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public static class Food extends Product {
+public class Food extends Product {
 
 	private final LocalDate bestBefore;
 

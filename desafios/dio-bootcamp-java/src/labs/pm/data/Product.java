@@ -19,7 +19,7 @@ import java.time.LocalDate;
  * @see "My Github /Duduxs"
  *
  */
-public abstract class Product {
+public abstract class Product implements Rateable<Product>{
 
 	private final int id;
 
@@ -56,6 +56,7 @@ public abstract class Product {
 		return price;
 	}
 
+	@Override
 	public Rating getRating() {
 		return rating;
 	}
@@ -64,12 +65,10 @@ public abstract class Product {
 		return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
 	}
 	
-	public abstract Product applyRating(Rating rating);
-	
 	public LocalDate getBestBefore() {
 		return LocalDate.now();
 	}
-
+	
 	@Override
 	public String toString() {
 		return "id=" + id + ", name=" + name + ", price=" + price + ", discount=" + getDiscount() + ", rating="
