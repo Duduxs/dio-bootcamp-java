@@ -5,6 +5,8 @@ import static labs.pm.data.Rating.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import labs.pm.data.Drink;
@@ -29,6 +31,14 @@ public class Shop {
 		  ProductManager pm = new ProductManager(Locale.getDefault());
 		  
 		  Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+		  Product p2 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+		  List<Product> list = new ArrayList<>(10);
+		  
+		  Drink x = new Drink();
+		  Food y = new Food();
+		  Product v = x;
+		  
+		  System.out.println(list.get(2));
 		  pm.printProductReport();
 		  p1 = pm.reviewProduct(p1, FOUR_STAR, "Very cool!");
 		  p1 = pm.reviewProduct(p1, TWO_STAR, "Very cool!");
