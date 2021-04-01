@@ -19,7 +19,7 @@ import java.time.LocalDate;
  * @see "My Github /Duduxs"
  *
  */
-public abstract class Product implements Rateable<Product>{
+public abstract class Product implements Rateable<Product> {
 
 	private final int id;
 
@@ -29,11 +29,11 @@ public abstract class Product implements Rateable<Product>{
 
 	public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.9);
 
-	 Product() {
+	Product() {
 		this(0, "", BigDecimal.ZERO);
 	}
 
-	Product(int id , String name, BigDecimal price) {
+	Product(int id, String name, BigDecimal price) {
 		this(id, name, price, NOT_RATED);
 	}
 
@@ -43,7 +43,7 @@ public abstract class Product implements Rateable<Product>{
 		this.price = price;
 		this.rating = rating;
 	}
-		
+
 	public int getId() {
 		return id;
 	}
@@ -51,7 +51,7 @@ public abstract class Product implements Rateable<Product>{
 	public String getName() {
 		return name;
 	}
-	
+
 	public BigDecimal getPrice() {
 		return price;
 	}
@@ -60,15 +60,15 @@ public abstract class Product implements Rateable<Product>{
 	public Rating getRating() {
 		return rating;
 	}
-	
+
 	public BigDecimal getDiscount() {
 		return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
 	}
-	
+
 	public LocalDate getBestBefore() {
 		return LocalDate.now();
 	}
-	
+
 	@Override
 	public String toString() {
 		return "id=" + id + ", name=" + name + ", price=" + price + ", discount=" + getDiscount() + ", rating="
@@ -87,26 +87,14 @@ public abstract class Product implements Rateable<Product>{
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (price == null) {
-			if (other.price != null)
-				return false;
-		} else if (!price.equals(other.price))
-			return false;
-		return true;
+		}
+		if (obj instanceof Product) {
+			final Product other = (Product) obj;
+			return this.id == other.id;
+		}
+		return false;
 	}
 
 }
